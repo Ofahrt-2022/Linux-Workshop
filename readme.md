@@ -7,7 +7,7 @@ Das Template-Repo für die Workshop-Folien der Ofahrt 2022.
 - Installation der [AlgoTeX-Vorlage](https://github.com/TUDalgo/AlgoTeX#algotex---die-latex-vorlage-der-fop-und-aud)
 
 ## Konfiguration des Formatters
-Um eine einheitliche Formatierung aller Übungsblätter zu gewährleisten, muss Latexindent installiert und entsprechend konfiguriert werden, um die mitgelieferte [`latexindent.yaml`](latexindent.yaml) zu verwenden.
+Um eine einheitliche Formatierung aller Workshops zu gewährleisten, muss Latexindent installiert und entsprechend konfiguriert werden, um die mitgelieferte [`latexindent.yaml`](latexindent.yaml) zu verwenden.
 Ein Aufruf von latexindent könnte z.B. so aussehen:
 ```sh
 latexindent.pl -l -m myfile.tex
