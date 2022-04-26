@@ -58,18 +58,23 @@
     \subsection{Die wichtigsten Befehle: Pakete suchen}
     \begin{frame}[fragile]
         \slidehead{}
-        \begin{columns}
-            \begin{column}[c]{\textwidth/3}
-                \begin{codeBlock}[]{}
-                    a + a = 2*a
-                \end{codeBlock}
-            \end{column}
-            \begin{column}[c]{\textwidth/3}
-                b
-            \end{column}
-            \begin{column}[c]{\textwidth/3}
-                c
-            \end{column}
-        \end{columns}
+        \begin{codeBlock}[fontsize=\tiny]{minted language=text, title=\codeBlockTitle{Pakete suchen mit {\ttfamily yum}}}
+            [root@oshgnacknak ~]# yum search gcc
+            Loaded plugins: fastestmirror
+            Loading mirror speeds from cached hostfile
+             * base: mirror.imt-systems.com
+             * epel: mirror.imt-systems.com
+             * extras: ftp.plusline.net
+             * updates: de.mirrors.clouvider.net
+            ================================= N/S matched: gcc ==================================
+            avr-gcc.x86_64 : Cross Compiling GNU GCC targeted at avr
+            avr-gcc-c++.x86_64 : Cross Compiling GNU GCC targeted at avr
+            csgcca.x86_64 : A compiler wrapper that runs 'gcc -fanalyzer' in background
+            gcc-c++.x86_64 : C++ support for GCC
+            gcc-gnat.x86_64 : Ada 95 support for GCC
+            gcc-objc.x86_64 : Objective-C support for GCC
+            gcc-objc++.x86_64 : Objective-C++ support for GCC
+            gcc-plugin-devel.x86_64 : Support for compiling GCC plugins
+        \end{codeBlock}
     \end{frame}
 \end{document}
