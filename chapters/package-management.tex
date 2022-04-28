@@ -12,7 +12,7 @@
     boxarc=3pt,
     fleqn,
     % shell_escape = false, % Kompatibilität mit sharelatex
-    ]{algoslides}
+]{algoslides}
 
 %%------------%%
 %%--Packages--%%
@@ -35,8 +35,211 @@
 \graphicspath{{../pictures}}
 
 \begin{document}
-\section{Paketverwaltung}\label{package-management}\label{Paketverwaltung}
-\begin{frame}
-    \slidehead{}
-\end{frame}
+    \section{Paketverwaltung}\label{package-management}\label{Paketverwaltung}
+    \subsection{Die Paketmanager großer Distros}
+    \begin{frame}
+        \slidehead{}
+        \begin{itemize}
+            \item Redhat based: {\ttfamily yum}
+            \item Debian based: {\ttfamily apt}
+            \item Arch based: {\ttfamily pacman}
+        \end{itemize}
+    \end{frame}
+    \subsection{Vorteile der Nutzung eines Paketmanager}
+    \begin{frame}
+        \slidehead{}
+        \begin{itemize}
+            \item Software kann zentral installiert, konfiguriert und entfernt werden
+            \item Software kommt aus vertrauter Quelle
+            \item Abhängigkeiten werden automatisch mit installiert
+            \item Nicht jedes Software muss ihren eigenen Updater mitbringen
+        \end{itemize}
+    \end{frame}
+    \subsection{Die wichtigsten Befehle: Pakete updaten}
+    \begin{frame}[fragile]
+        \slidehead{}
+        \begin{codeBlock}[fontsize=\tiny]{minted language=text, title=\codeBlockTitle{Pakete updaten mit {\ttfamily yum}}}
+            [root@oshgnacknak ~]# yum update
+            Loaded plugins: fastestmirror
+            Loading mirror speeds from cached hostfile
+             * base: mirror.imt-systems.com
+             * epel: mirror.imt-systems.com
+             * extras: ftp.plusline.net
+             * updates: de.mirrors.clouvider.net
+            No packages marked for update
+        \end{codeBlock}
+    \end{frame}
+    \begin{frame}[fragile]
+        \slidehead{}
+        \begin{codeBlock}[fontsize=\tiny]{minted language=text, title=\codeBlockTitle{Pakete updaten mit {\ttfamily apt}}}
+            pi@naspi:~ $ sudo apt update
+            Hit:1 http://raspbian.raspberrypi.org/raspbian buster InRelease
+            Hit:2 http://archive.raspberrypi.org/debian buster InRelease
+            Get:3 https://download.docker.com/linux/raspbian buster InRelease [33.6 kB]
+            Hit:4 https://deb.nodesource.com/node_14.x buster InRelease
+            Fetched 33.6 kB in 1s (27.9 kB/s)
+            Reading package lists... Done
+            Building dependency tree
+            Reading state information... Done
+            All packages are up to date.
+            pi@naspi:~ $ sudo apt upgrade
+            Reading package lists... Done
+            Building dependency tree
+            Reading state information... Done
+            Calculating upgrade... Done
+            Use 'sudo apt autoremove' to remove them.
+            0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+        \end{codeBlock}
+    \end{frame}
+    \begin{frame}[fragile]
+        \slidehead{}
+        \begin{codeBlock}[fontsize=\tiny]{minted language=text, title=\codeBlockTitle{Pakete updaten mit {\ttfamily pacman}}}
+            [osh@oshlaptop ~]$ sudo pacman -Suy
+            :: Paketdatenbanken werden synchronisiert …
+             core ist aktuell
+             extra                                                                                1700,9 KiB  1001 KiB/s 00:02 [#####################################################################] 100%
+             community                                                                               6,6 MiB  1375 KiB/s 00:05 [#####################################################################] 100%
+             multilib ist aktuell
+            :: Vollständige Systemaktualisierung wird gestartet …
+             Es gibt nichts zu tun
+        \end{codeBlock}
+    \end{frame}
+    \subsection{Die wichtigsten Befehle: Pakete suchen}
+    \begin{frame}[fragile]
+        \slidehead{}
+        \begin{codeBlock}[fontsize=\tiny]{minted language=text, title=\codeBlockTitle{Pakete suchen mit {\ttfamily yum}}}
+            [root@oshgnacknak ~]# yum search gcc
+            Loaded plugins: fastestmirror
+            Loading mirror speeds from cached hostfile
+             * base: mirror.imt-systems.com
+             * epel: mirror.imt-systems.com
+             * extras: ftp.plusline.net
+             * updates: de.mirrors.clouvider.net
+            ================================= N/S matched: gcc ==================================
+            avr-gcc.x86_64 : Cross Compiling GNU GCC targeted at avr
+            avr-gcc-c++.x86_64 : Cross Compiling GNU GCC targeted at avr
+            csgcca.x86_64 : A compiler wrapper that runs 'gcc -fanalyzer' in background
+            gcc-c++.x86_64 : C++ support for GCC
+            gcc-gnat.x86_64 : Ada 95 support for GCC
+            gcc-objc.x86_64 : Objective-C support for GCC
+            gcc-objc++.x86_64 : Objective-C++ support for GCC
+            gcc-plugin-devel.x86_64 : Support for compiling GCC plugins
+        \end{codeBlock}
+    \end{frame}
+    \begin{frame}[fragile]
+        \slidehead{}
+        \begin{codeBlock}[fontsize=\tiny]{minted language=text, title=\codeBlockTitle{Pakete suchen mit {\ttfamily apt}}}
+            pi@naspi:~ $ apt search gcc
+            Sorting... Done
+            Full Text Search... Done
+            arduino-builder/oldstable 1.3.25-1 armhf
+              Command line tool for compiling Arduino sketches
+
+            autoconf2.59/oldstable 2.59+dfsg-1 all
+              automatic configure script builder (obsolete version)
+
+            autoconf2.64/oldstable 2.64+dfsg-1 all
+              automatic configure script builder (obsolete version)
+
+            autofdo/oldstable 0.18-2 armhf
+              AutoFDO Profile Toolchain
+
+            binutils-mingw-w64/oldstable 2.31.1-11+8.3 all
+              Cross-binutils for Win32 and Win64 using MinGW-w64
+        \end{codeBlock}
+    \end{frame}
+    \begin{frame}[fragile]
+        \slidehead{}
+        \begin{codeBlock}[fontsize=\tiny]{minted language=text, title=\codeBlockTitle{Pakete suchen mit {\ttfamily pacman}}}
+            $ pacman -Ss gcc
+            core/gcc 11.2.0-4 (base-devel) [Installiert]
+                The GNU Compiler Collection - C and C++ frontends
+            core/gcc-ada 11.2.0-4
+                Ada front-end for GCC (GNAT)
+            core/gcc-d 11.2.0-4
+                D frontend for GCC
+            core/gcc-fortran 11.2.0-4
+                Fortran front-end for GCC
+            core/gcc-go 11.2.0-4
+                Go front-end for GCC
+            core/gcc-libs 11.2.0-4 [Installiert]
+                Runtime libraries shipped by GCC
+            core/gcc-objc 11.2.0-4
+                Objective-C front-end for GCC
+        \end{codeBlock}
+    \end{frame}
+    \subsection{Die wichtigsten Befehle: Pakete installieren}
+    \begin{frame}[fragile]
+        \slidehead{}
+        \begin{codeBlock}[fontsize=\tiny]{minted language=text, title=\codeBlockTitle{Pakete installieren mit {\ttfamily yum}}}
+            [root@oshgnacknak ~]# yum install gcc
+            Loaded plugins: fastestmirror
+            Loading mirror speeds from cached hostfile
+             * base: mirror.imt-systems.com
+             * epel: mirror.imt-systems.com
+             * extras: ftp.plusline.net
+             * updates: de.mirrors.clouvider.net
+            Package gcc-4.8.5-44.el7.x86_64 already installed and latest version
+            Nothing to do
+        \end{codeBlock}
+    \end{frame}
+    \begin{frame}[fragile]
+        \slidehead{}
+        \begin{codeBlock}[fontsize=\tiny]{minted language=text, title=\codeBlockTitle{Pakete installieren mit {\ttfamily apt}}}
+            pi@naspi:~ $ sudo apt install gcc
+            Reading package lists... Done
+            Building dependency tree
+            Reading state information... Done
+            gcc is already the newest version (4:8.3.0-1+rpi2).
+            Use 'sudo apt autoremove' to remove them.
+            0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+        \end{codeBlock}
+    \end{frame}
+    \begin{frame}[fragile]
+        \slidehead{}
+        \begin{codeBlock}[fontsize=\tiny]{minted language=text, title=\codeBlockTitle{Pakete installieren mit {\ttfamily pacman}}}
+            $ sudo pacman -S gcc --needed
+            Warnung: gcc-11.2.0-4 ist aktuell -- Überspringe
+            Es gibt nichts zu tun
+        \end{codeBlock}
+    \end{frame}
+    \subsection{Die wichtigsten Befehle: Pakete entfernen}
+    \begin{frame}[fragile]
+        \slidehead{}
+        \begin{codeBlock}[fontsize=\tiny]{minted language=text, title=\codeBlockTitle{Pakete entfernen mit {\ttfamily yum}}}
+            [root@oshgnacknak ~]# yum remove gcc
+            Loaded plugins: fastestmirror
+            No Match for argument: gcc
+            No Packages marked for removal
+        \end{codeBlock}
+    \end{frame}
+    \begin{frame}[fragile]
+        \slidehead{}
+        \begin{codeBlock}[fontsize=\tiny]{minted language=text, title=\codeBlockTitle{Pakete entfernen mit {\ttfamily apt}}}
+            pi@naspi:~ $ sudo apt remove gcc
+            Reading package lists... Done
+            Building dependency tree
+            Reading state information... Done
+            The following packages were automatically installed and are no longer required:
+              g++-8 libstdc++-8-dev
+            Use 'sudo apt autoremove' to remove them.
+            The following packages will be REMOVED:
+              build-essential g++ gcc
+            0 upgraded, 0 newly installed, 3 to remove and 0 not upgraded.
+            After this operation, 81.9 kB disk space will be freed.
+            Do you want to continue? [Y/n]
+            (Reading database ... 54461 files and directories currently installed.)
+            Removing build-essential (12.6) ...
+            Removing g++ (4:8.3.0-1+rpi2) ...
+            Removing gcc (4:8.3.0-1+rpi2) ...
+            Processing triggers for man-db (2.8.5-2) ...
+        \end{codeBlock}
+    \end{frame}
+    \begin{frame}[fragile]
+        \slidehead{}
+        \begin{codeBlock}[fontsize=\tiny]{minted language=text, title=\codeBlockTitle{Pakete entfernen mit {\ttfamily pacman}}}
+            [osh@oshlaptop ~]$ sudo pacman -Rns gcc
+            Fehler: Ziel nicht gefunden: gcc
+        \end{codeBlock}
+    \end{frame}
 \end{document}
