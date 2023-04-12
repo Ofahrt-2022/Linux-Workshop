@@ -13,6 +13,32 @@ pandoc-latex-fontsize:
 
 ![](img/Linux Mountains Wallpaper.png){ height=80% }
 
+# Was ist Linux und wer nutzt es?
+
+::: columns
+
+:::: column
+
+Wer Linux nutzt in die Ecke
+
+\begin{tikzpicture}[ultra thick]
+\draw[<-, line width=2mm] (0,0) --++(3cm,0);
+\end{tikzpicture}
+
+::::
+
+:::: column
+
+Die anderen in die andere Ecke
+
+\hspace*{\fill} \begin{tikzpicture}[ultra thick]
+\draw[->, line width=2mm] (0,0) --++(3cm,0);
+\end{tikzpicture}
+\hspace*{\fill}
+::::
+
+:::
+
 # Linux im Vergleich zu anderen Betriebssysteme
 
 1. Open Source
