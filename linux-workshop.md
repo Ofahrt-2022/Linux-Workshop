@@ -116,6 +116,14 @@ von Tools auf Linux deutlich einfacher.
 
 - Virtuelle Maschinen
 
+    - WSL
+
+    - VirtualBox
+
+    - VMware
+
+    - $\vdots$
+
 - Dual-Boot
 
 - Im Anschluss Live booten
