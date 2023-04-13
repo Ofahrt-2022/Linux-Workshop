@@ -9,6 +9,8 @@ pandoc-latex-fontsize:
     size: tiny
 ---
 
+\usetikzlibrary{arrows.meta}
+
 # Willkommen bei Linux
 
 ![](img/Linux Mountains Wallpaper.png){ height=80% }
@@ -22,7 +24,7 @@ pandoc-latex-fontsize:
 Wer Linux nutzt in die Ecke
 
 \begin{tikzpicture}[ultra thick]
-\draw[<-, line width=2mm] (0,0) --++(3cm,0);
+\draw[latex-, line width=2mm] (0,0) --++(3cm,0);
 \end{tikzpicture}
 
 ::::
@@ -32,7 +34,7 @@ Wer Linux nutzt in die Ecke
 Die anderen in die andere Ecke
 
 \hspace*{\fill} \begin{tikzpicture}[ultra thick]
-\draw[->, line width=2mm] (0,0) --++(3cm,0);
+\draw[-latex, line width=2mm] (0,0) --++(3cm,0);
 \end{tikzpicture}
 \hspace*{\fill}
 ::::
