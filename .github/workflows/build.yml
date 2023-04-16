@@ -28,6 +28,12 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v3
 
+      # Link texmf folder to the current texmf home
+      - name: Link texmf folder to the current texmf home
+        run: |
+          ln -s /root/texmf $(kpsewhich -var-value=TEXMFHOME)
+          texhash --verbose
+
       # 2. Build the document
       - name: "Build the document"
         run: |
