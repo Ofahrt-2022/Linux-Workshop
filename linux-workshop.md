@@ -54,8 +54,8 @@ Die anderen in die andere Ecke
 - Der Komplette Kernel: <https://github.com/torvalds/linux>
 - GPL lizensiert
 
-# Privatsphäre
-
+# Privatsphäre {.c}
+\centering{}
 ![](img/linux_privacy.jpg){ height=80% }
 
 # Sicherheit
@@ -71,9 +71,9 @@ Die anderen in die andere Ecke
 
 - Quasi alle sicherheitskritischen Rechner laufen auf Linux (hoffentlich)
 
-# Frei, wie in "freie Sprache"
-
-![`dd if=boot.bin of=/dev/sda`](img/freedom_of_choice_meme.png){ height=80% }
+# Frei, wie in "freie Sprache" {.c}
+\centering{}
+![`dd if=boot.bin of=/dev/sda`](img/freedom_of_choice_meme.png){ height=70% }
 
 # Paketverwaltung
 
