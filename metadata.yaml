@@ -1,0 +1,18 @@
+classoption: 
+  - ngerman
+  - accentcolor=3b
+  - fontsize= 12pt
+  - a4paper
+  - aspectratio=169
+  - marginpar=false
+  - colorback=true
+  - leqno
+  - fleqn
+  - footsepline=.5pt
+  - boxarc=3pt
+  - boxarc
+  - fleqn
+# titlegraphic: img/aleph0.png
+# logo: img/aleph0-small.png
+# toc: true
+documentclass: algoslides
