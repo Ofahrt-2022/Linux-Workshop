@@ -1,26 +1,21 @@
 ---
-title: Linux
-author: Some dudes
+title: Linux-Workshop
+author: "Some dudes"
 date: \today
-theme: simple
 lang: de_DE
 pandoc-latex-fontsize:
   - classes: [small]
     size: tiny
----
+titlegraphic: img/Linux Mountains Wallpaper.png
+...
+\maketitle{}
 
-\usetikzlibrary{arrows.meta}
-
-# Willkommen bei Linux
-
-![](img/Linux Mountains Wallpaper.png){ height=80% }
-
-# Was ist Linux und wer nutzt es?
+# Was ist Linux und wer nutzt es? {.c}
 
 ::: columns
 
 :::: column
-
+\centering{}
 Wer Linux nutzt in die Ecke
 
 \begin{tikzpicture}[ultra thick]
@@ -30,6 +25,7 @@ Wer Linux nutzt in die Ecke
 ::::
 
 :::: column
+\centering{}
 
 Die anderen in die andere Ecke
 
@@ -58,8 +54,8 @@ Die anderen in die andere Ecke
 - Der Komplette Kernel: <https://github.com/torvalds/linux>
 - GPL lizensiert
 
-# Privatsphäre
-
+# Privatsphäre {.c}
+\centering{}
 ![](img/linux_privacy.jpg){ height=80% }
 
 # Sicherheit
@@ -75,9 +71,9 @@ Die anderen in die andere Ecke
 
 - Quasi alle sicherheitskritischen Rechner laufen auf Linux (hoffentlich)
 
-# Frei, wie in "freie Sprache"
-
-![`dd if=boot.bin of=/dev/sda`](img/freedom_of_choice_meme.png){ height=80% }
+# Frei, wie in "freie Sprache" {.c}
+\centering{}
+![`dd if=boot.bin of=/dev/sda`](img/freedom_of_choice_meme.png){ height=70% }
 
 # Paketverwaltung
 
