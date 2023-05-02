@@ -1,6 +1,9 @@
 ---
 title: Linux-Workshop
-author: "Some dudes"
+author:
+  - Ruben
+  - Alex
+  - Jonas
 date: \today
 lang: de_DE
 pandoc-latex-fontsize:
@@ -41,7 +44,7 @@ Die anderen in die andere Ecke
 
 1. Open Source
 
-1. Privaty
+1. Privacy
 
 1. Security
 
